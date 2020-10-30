@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+}
