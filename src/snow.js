@@ -1,7 +1,9 @@
 const canvas = document.getElementById("canvas");
 canvas.width = innerWidth;
 canvas.height = innerHeight;
-canvas.style.position = "fixed";
+canvas.style.padding = "0";
+canvas.style.border = "none";
+canvas.style.borderRadius = "0"
 let ctx,
   count = 0;
 const list = [];
