@@ -59,8 +59,10 @@ canvas.addEventListener("mousemove", function (e) {
 });
 
 canvas.addEventListener("click", function () {
-  running = true;
-  raf = window.requestAnimationFrame(draw);
+  if (!running) {
+    raf = window.requestAnimationFrame(draw);
+    running = true;
+  }
 });
 
 canvas.addEventListener("mouseout", function () {
