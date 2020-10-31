@@ -11,10 +11,11 @@ class Start {
     this.y = _canvas.height - Math.floor(Math.random() * _canvas.height);
     this.size = Math.random() * 4 + 2;
     this.speed = 1;
+    this.canvas = _canvas;
+    this.radian = null;
   }
   draw(_ctx) {
-    this.x += this.speed;
-    this.y += this.speed;
+    this.computedPosition();
     _ctx.save();
     _ctx.translate(this.x, this.y);
     _ctx.beginPath();
@@ -31,6 +32,15 @@ class Start {
     _ctx.fillStyle = "#fff";
     _ctx.fill();
     _ctx.restore();
+  }
+  computedPosition() {
+    !this.radian && (this.radian = (Math.random() * Math.PI) / 2);
+    if (this.x >= this.canvas.width / 2) {
+      this.x += Math.abs(Math.cos(this.radian) * this.speed);
+    } else {
+      this.x -= Math.abs(Math.cos(this.radian) * this.speed);
+    }
+    this.y += Math.abs(Math.sin(this.radian) * this.speed);
   }
 }
 
